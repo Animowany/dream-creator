@@ -53,7 +53,7 @@ public class ItemCreatorMenu implements BukkitMenuSetup {
                    player.closeInventory();
                    break;
                case 11:
-                   LoreEditorMenu loreEditorMenu = BukkitCreator.getINSTANCE().getDreamBukkitPlatform().registerInjectable(LoreEditorMenu.class);
+                   LoreEditorMenu loreEditorMenu = BukkitCreator.getINSTANCE().getDreamBukkitPlatform().createInstance(LoreEditorMenu.class);
                    loreEditorMenu
                            .setBaseList(itemStack.hasItemMeta() && itemStack.getItemMeta().hasLore() ? itemStack.getItemMeta().getLore() : ListBuilder.of())
                            .setBaseValue("")
@@ -66,7 +66,7 @@ public class ItemCreatorMenu implements BukkitMenuSetup {
                    loreEditorMenu.build(player).openFirstPage(player);
                    break;
                case 12:
-                   MaterialEditorMenu materialEditorMenu = BukkitCreator.getINSTANCE().getDreamBukkitPlatform().registerInjectable(MaterialEditorMenu.class);
+                   MaterialEditorMenu materialEditorMenu = BukkitCreator.getINSTANCE().getDreamBukkitPlatform().createInstance(MaterialEditorMenu.class);
                    materialEditorMenu
                            .setReturnConsumer(material -> {
                                ItemBuilder.manipulate(itemStack).setType(material);
@@ -92,7 +92,7 @@ public class ItemCreatorMenu implements BukkitMenuSetup {
                    });
                    break;
                case 14:
-                   EnchantEditorMenu enchantEditorMenu = BukkitCreator.getINSTANCE().getDreamBukkitPlatform().registerInjectable(EnchantEditorMenu.class);
+                   EnchantEditorMenu enchantEditorMenu = BukkitCreator.getINSTANCE().getDreamBukkitPlatform().createInstance(EnchantEditorMenu.class);
                    enchantEditorMenu
                            .setItemStack(itemStack)
                            .setReturnConsumer(itemStack1 -> {
@@ -102,7 +102,7 @@ public class ItemCreatorMenu implements BukkitMenuSetup {
                    enchantEditorMenu.build().openFirstPage(player);
                    break;
                case 15:
-                   ItemFlagEditorMenu itemFlagEditorMenu = BukkitCreator.getINSTANCE().getDreamBukkitPlatform().registerInjectable(ItemFlagEditorMenu.class);
+                   ItemFlagEditorMenu itemFlagEditorMenu = BukkitCreator.getINSTANCE().getDreamBukkitPlatform().createInstance(ItemFlagEditorMenu.class);
                    itemFlagEditorMenu
                            .setItemMeta(itemStack.getItemMeta())
                            .setReturnConsumer(itemMeta -> {
