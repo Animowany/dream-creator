@@ -11,7 +11,7 @@ idea {
 
 allprojects {
     group = "cc.dreamcode.creator"
-    version = "1.0.4"
+    version = "1.0.5"
 
     apply(plugin = "java-library")
 
